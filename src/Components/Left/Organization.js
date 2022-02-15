@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../../Context";
 
-function Organization(props) {
+function Organization() {
+  const context = useContext(Context);
+  const {
+    description31,
+    description32,
+    description33,
+    description34
+  } = context[0];
+  const onChange = context[1];
   return (
-    <section className={`d-${props.organization} flex-column  p-5 m-0`}>
+    <section className="flex-column">
       <h1 className="text-center pb-5">Organization</h1>
       <form className="form-row m-2">
         <div className="col-md-12">
@@ -10,9 +19,9 @@ function Organization(props) {
             type="text"
             className="form-control my-2"
             name="description31"
-            value={props.description31}
+            value={description31}
             placeholder="e.g."
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-12">
@@ -20,9 +29,9 @@ function Organization(props) {
             type="text"
             className="form-control my-2"
             name="description32"
-            value={props.description32}
+            value={description32}
             placeholder="e.g."
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-12">
@@ -30,9 +39,9 @@ function Organization(props) {
             type="text"
             className="form-control my-2"
             name="description33"
-            value={props.description33}
+            value={description33}
             placeholder="e.g."
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-12">
@@ -40,27 +49,12 @@ function Organization(props) {
             type="text"
             className="form-control my-2"
             name="description34"
-            value={props.description34}
+            value={description34}
             placeholder="e.g."
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
       </form>
-      
-      <div className="d-flex justify-content-between align-items-center pt-5">
-        <button
-          className="btn bg-dark text-white fs-5 btn-lg shadow"
-          onClick={()=>{props.display('education')}}
-        >
-          Back
-        </button>
-        <button
-          className="btn bg-dark text-white fs-5 btn-lg shadow"
-          onClick={()=>{props.display('organization')}}
-        >
-          Next
-        </button>
-      </div>
     </section>
   );
 }

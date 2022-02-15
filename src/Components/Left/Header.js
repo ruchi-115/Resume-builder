@@ -1,8 +1,23 @@
-import React from "react";
+import React, {useContext} from "react";
+import Context from "../../Context"
 
-function Header(props) {
+function Header() {
+  const context = useContext(Context);
+  const {
+    fname,
+    lname,
+    profession,
+    profession_description,
+    email,
+    phone,
+    city,
+    country,
+    linkedIn,
+    github
+  } = context[0];
+  const onChange = context[1];
   return (
-    <section className={`d-${props.header} flex-column  p-5 m-0`}>
+    <section className="flex-column">
       <h1 className="text-center pb-5">Header</h1>
       <form className="row g-3">
         <div className="col-md-6">
@@ -13,10 +28,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="fname"
-            value={props.fname}
+            value={fname}
             id="heading_name"
             placeholder="e.g. Jhon"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-6">
@@ -27,10 +42,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="lname"
-            value={props.lname}
+            value={lname}
             id="heading_name"
             placeholder="e.g. Doe"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-12">
@@ -41,10 +56,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="profession"
-            value={props.profession}
+            value={profession}
             id="heading_profession"
             placeholder="e.g. Business Develpment Manager"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-12">
@@ -55,10 +70,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="profession_description"
-            value={props.profession_description}
+            value={profession_description}
             id="heading_description"
             placeholder="e.g."
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-6">
@@ -69,10 +84,10 @@ function Header(props) {
             type="email"
             className="form-control my-2"
             name="email"
-            value={props.email}
+            value={email}
             id="heading_email"
             placeholder="e.g. jhon.doe@gmail.com"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-6">
@@ -83,10 +98,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="phone"
-            value={props.phone}
+            value={phone}
             id="heading_phone"
             placeholder="e.g. 202-555-0166"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
 
@@ -98,10 +113,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="city"
-            value={props.city}
+            value={city}
             id="heading_city"
             placeholder="e.g. New York"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-6">
@@ -112,10 +127,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="country"
-            value={props.country}
+            value={country}
             id="heading_country"
             placeholder="e.g. USA"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-12">
@@ -126,10 +141,10 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="linkedIn"
-            value={props.linkedIn}
+            value={linkedIn}
             id="heading_linkedIn"
             placeholder="e.g. linkedin.com"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
         <div className="col-md-12">
@@ -140,21 +155,13 @@ function Header(props) {
             type="text"
             className="form-control my-2"
             name="github"
-            value={props.github}
+            value={github}
             id="heading_github"
             placeholder="e.g. github.com"
-            onChange={props.onChange}
+            onChange={onChange}
           />
         </div>
       </form>
-      <div className="d-flex justify-content-end pt-5">
-        <button
-          className="btn bg-dark text-white fs-5 btn-lg shadow"
-          onClick={()=>{props.display('header')}}
-        >
-          Next
-        </button>
-      </div>
     </section>
   );
 }

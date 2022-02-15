@@ -1,54 +1,43 @@
-import React from "react";
+import React, { useContext } from "react";
+import Context from "../../Context";
 
-function Style(props) {
+function Style() {
+  const context = useContext(Context);
+  const buttonColor = context[3];
   return (
-    <section className={`d-${props.style} flex-column  p-5 m-0`}>
+    <section className="flex-column">
       <h1 className="text-center pb-5">Style</h1>
       <div className="d-flex  justify-content-between">
         <button
           className="btn btn-info btn-lg shadow"
-          onClick={() =>{props.buttonColor('info')}}
+          onClick={() =>{buttonColor('info')}}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
           className="btn btn-dark btn-lg shadow"
-          onClick={() =>{props.buttonColor('dark')}}
+          onClick={() =>{buttonColor('dark')}}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
           className="btn btn-danger btn-lg shadow"
-          onClick={() =>{props.buttonColor('danger')}}
+          onClick={() =>{buttonColor('danger')}}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
           className="btn btn-success btn-lg shadow"
-          onClick={() =>{props.buttonColor('success')}}
+          onClick={() =>{buttonColor('success')}}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
           className="btn btn-secondary btn-lg shadow"
-          onClick={() =>{props.buttonColor('secondary')}}
+          onClick={() =>{buttonColor('secondary')}}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
           className="btn btn-primary btn-lg shadow"
-          onClick={() =>{props.buttonColor('primary')}}
+          onClick={() =>{buttonColor('primary')}}
           style={{ width: "50px", height: "50px" }}
         ></button>
-      </div>
-      <div className="d-flex justify-content-between align-items-center pt-5">
-        <button
-          className="btn bg-dark text-white fs-5 btn-lg shadow"
-          onClick={()=>{props.display('organization')}}
-        >
-          Back
-        </button>
-        <button
-          className="btn bg-dark text-white fs-5 btn-lg shadow"
-          onClick={()=>{props.display('print')}}
-        >
-          Print
-        </button>
       </div>
     </section>
   );

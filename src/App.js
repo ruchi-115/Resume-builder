@@ -1,6 +1,4 @@
-import Template1 from "./Components/Template1/Template1";
-import Template2 from "./Components/Template2/Template2";
-import Template3 from "./Components/Template3/Template3";
+import Template from "./Components/Template";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -76,9 +74,7 @@ function App() {
             </div>
           </div>
         </Route>
-        <Route exact path="/template/1" component={Template1} />
-        <Route exact path="/template/2" component={Template2} />
-        <Route exact path="/template/3" component={Template3} />
+        <Route exact path="/template/:id" component={Template} />
       </Switch>
     </Router>
   );

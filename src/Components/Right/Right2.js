@@ -1,146 +1,198 @@
-import React from "react";
-function Right2(props) {
+import React, { useContext } from "react";
+import Context from "../../Context";
+function Right2() {
+  const context = useContext(Context);
+  const {
+    fname,
+    lname,
+    profession,
+    profession_description,
+    email,
+    phone,
+    city,
+    country,
+    linkedIn,
+    github,
+    skill1,
+    skill2,
+    skill3,
+    skill4,
+    skill5,
+    skill6,
+    skill7,
+    skill8,
+    company1,
+    company2,
+    title1,
+    title2,
+    city1,
+    city2,
+    country1,
+    country2,
+    datefrom1,
+    datefrom2,
+    datefrom3,
+    dateto1,
+    dateto2,
+    dateto3,
+    degree,
+    university,
+    description11,
+    description12,
+    description13,
+    description14,
+    description21,
+    description22,
+    description23,
+    description24,
+    description31,
+    description32,
+    description33,
+    description34
+  } = context[0];
+const color = context[2];
+const wcounts = context[4];
   return (
     <div className="bg-white mx-2 mt-4 text-dark d-flex justify-content-center align-items-center">
       <div className="shadow-lg" id="template" style={{ width: "800px" }}>
         <section className="d-flex p-5 pb-2 m-0">
           <div className="p-0 m-0 ">
-            <h1 className={`d-flex text-${props.color} mb-4 m-0 p-0 fw-bolder`}>
-              {props.fname === "" ? "John" : props.fname}{" "}
-              {props.lname === "" ? "Doe" : props.lname}
+            <h1 className={`d-flex text-${color} mb-4 m-0 p-0 fw-bolder`}>
+              {fname === "" ? "John" : fname}{" "}
+              {lname === "" ? "Doe" : lname}
             </h1>
             <h5 className="m-0 my-1 fw-bold ">
-              {props.profession === ""
+              {profession === ""
                 ? "Business Develpment Manager"
-                : props.profession}
+                : profession}
             </h5>
             <div className="m-0 mb-1">
-              {props.profession_description === ""
+              {profession_description === ""
                 ? " Professional Lorem ipsum dolor sit amet, consectetur adipisicingelit Nesciunt porro consectetur libero"
-                : props.profession_description}
+                : profession_description}
             </div>
           </div>
           <div className="d-flex justify-content-end flex-column">
             <div className=" my-2 p-0 d-flex flex-row-reverse fw-lighter">
-              <div className={`text-${props.color} mx-1`}>
+              <div className={`text-${color} mx-1`}>
                 <ion-icon name="mail-outline"></ion-icon>
               </div>
               <div>
-                {props.email === "" ? "jhon.doe@gmail.com" : props.email}
+                {email === "" ? "jhon.doe@gmail.com" : email}
               </div>
             </div>
             <div className=" my-2  p-0 d-flex flex-row-reverse fw-lighter">
-              <div className={`text-${props.color} mx-1`}>
+              <div className={`text-${color} mx-1`}>
                 <ion-icon name="call-outline"></ion-icon>
               </div>
-              <div>{props.phone === "" ? "202-555-0166" : props.phone}</div>
+              <div>{phone === "" ? "202-555-0166" : phone}</div>
             </div>
             <div className=" d-flex my-2 flex-row-reverse  p-0 fw-lighter">
-              <div className={`text-${props.color} mx-1`}>
+              <div className={`text-${color} mx-1`}>
                 <ion-icon name="location-outline"></ion-icon>
               </div>
-              {props.city === "" ? "New York" : props.city},
-              {props.country === "" ? "USA" : props.country}
+              {city === "" ? "New York" : city},
+              {country === "" ? "USA" : country}
             </div>
             <div className=" my-2 p-0 d-flex  flex-row-reverse fw-lighter">
-              <div className={`text-${props.color} mx-1`}>
+              <div className={`text-${color} mx-1`}>
                 <ion-icon name="logo-linkedIn"></ion-icon>
               </div>
               <div>
-                {props.linkedIn === "" ? "linkedin.com" : props.linkedIn}
+                {linkedIn === "" ? "linkedin.com" : linkedIn}
               </div>
             </div>
             <div className=" my-2  p-0 d-flex  flex-row-reverse fw-lighter">
-              <div className={`text-${props.color} mx-1`}>
+              <div className={`text-${color} mx-1`}>
                 <ion-icon name="logo-github"></ion-icon>
               </div>
-              <div> {props.github === "" ? "github.com" : props.github}</div>
+              <div> {github === "" ? "github.com" : github}</div>
             </div>
           </div>
         </section>
         <section className="px-5">
           <div className="m-0 ">
-            <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
             <h5
-              className={`text-${props.color} text-center fst-italic fw-bold`}
+              className={`text-${color} text-center fst-italic fw-bold`}
             >
               SKILLS
             </h5>
-            <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
             <div className="d-flex my-3 ">
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill1 === "" ? "SEO" : props.skill1}
+                {skill1 === "" ? "SEO" : skill1}
               </button>
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill2 === "" ? "Public Speaking" : props.skill2}
+                {skill2 === "" ? "Public Speaking" : skill2}
               </button>
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill3 === "" ? "Negotiation" : props.skill3}
+                {skill3 === "" ? "Negotiation" : skill3}
               </button>
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill4 === "" ? "Decision Making" : props.skill4}
+                {skill4 === "" ? "Decision Making" : skill4}
               </button>
             </div>
             <div className="d-flex my-1">
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill5 === "" ? "Research & Strategy" : props.skill5}
+                {skill5 === "" ? "Research & Strategy" : skill5}
               </button>
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill6 === "" ? "Emotional Intelligence" : props.skill6}
+                {skill6 === "" ? "Emotional Intelligence" : skill6}
               </button>
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill7 === "" ? "Outbound Marketing" : props.skill7}
+                {skill7 === "" ? "Outbound Marketing" : skill7}
               </button>
               <button
-                className={`btn btn-${props.color} text-white m-1 btn-sm`}
+                className={`btn btn-${color} text-white m-1 btn-sm`}
               >
-                {props.skill8 === "" ? "Email Marketing" : props.skill8}
+                {skill8 === "" ? "Email Marketing" : skill8}
               </button>
             </div>
           </div>
           <div className="my-3">
-            <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
             <h5
-              className={`text-${props.color} text-center fst-italic fw-bold`}
+              className={`text-${color} text-center fst-italic fw-bold`}
             >
               WORK EXPERINCE
             </h5>
-            <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
             <div className="my-3">
               <h5 className="m-0 mb-1 p-0 fw-bold">
-                {props.company1 === ""
+                {company1 === ""
                   ? "Business Development Manager"
-                  : props.company1}
+                  : company1}
               </h5>
               <h6 className="m-0 p-0">
-                {props.title1 === "" ? "AirState Solutions" : props.title1}
+                {title1 === "" ? "AirState Solutions" : title1}
               </h6>
               <div className="d-flex justify-content-between m-0 p-0">
                 <div className="fw-lighter d-flex">
-                  {props.datefrom1 === "" ? "2014-09" : props.datefrom1} /{" "}
-                  {props.dateto1 === "" ? "2017-06" : props.dateto1}
+                  {datefrom1 === "" ? "2014-09" : datefrom1} /{" "}
+                  {dateto1 === "" ? "2017-06" : dateto1}
                 </div>
                 <div className="fw-lighter d-flex">
-                  {props.city1 === "" ? "New York" : props.city1},
-                  {props.country1 === "" ? "USA" : props.country1}
+                  {city1 === "" ? "New York" : city1},
+                  {country1 === "" ? "USA" : country1}
                 </div>
               </div>
               <div className="m-0 p-0">
@@ -148,60 +200,60 @@ function Right2(props) {
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description11 === ""
+                    {description11 === ""
                       ? "Successfully Managed."
-                      : props.description11}
+                      : description11}
                   </div>
                 </div>
                 <div className="m-0 p-0 d-flex">
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description12 === ""
+                    {description12 === ""
                       ? "Developed and Implemented new Marketing."
-                      : props.description12}
+                      : description12}
                   </div>
                 </div>
                 <div className="m-0 p-0 d-flex">
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description13 === ""
+                    {description13 === ""
                       ? "Improve the processes and customer service."
-                      : props.description13}
+                      : description13}
                   </div>
                 </div>
                 <div className="m-0 p-0 d-flex">
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description14 === ""
+                    {description14 === ""
                       ? "Implementing a new Loyalty program."
-                      : props.description14}
+                      : description14}
                   </div>
                 </div>
               </div>
             </div>
-            <div className={`my-3 d-${props.addCompanyText}`}>
+            {wcounts===1 && <div className="my-3">
               <h5 className="m-0 mb-1 p-0 fw-bold">
-                {props.company2 === ""
+                {company2 === ""
                   ? "Business Development Manager"
-                  : props.company2}
+                  : company2}
               </h5>
               <h6 className="m-0 p-0">
-                {props.title2 === "" ? "AirState Solutions" : props.title2}
+                {title2 === "" ? "AirState Solutions" : title2}
               </h6>
               <div className="d-flex justify-content-between m-0 p-0">
                 <div className="fw-lighter d-flex">
                   <div>
-                    {props.datefrom2 === "" ? "2014-09" : props.datefrom2}
+                    {datefrom2 === "" ? "2014-09" : datefrom2}
                   </div>
                   &#xa0;/&#xa0;
-                  <div>{props.dateto2 === "" ? "2017-06" : props.dateto2}</div>
+                  <div>{dateto2 === "" ? "2017-06" : dateto2}</div>
                 </div>
                 <div className="fw-lighter d-flex">
-                  <div>{props.city2 === "" ? "Chicago" : props.city2}</div>,
-                  <div>{props.country2 === "" ? "USA" : props.country2}</div>
+                  <div>{city2 === "" ? "Chicago" : city2}</div>,
+                  <div>{country2 === "" ? "USA" : country2}</div>
                 </div>
               </div>
               <div className="m-0 p-0">
@@ -209,112 +261,112 @@ function Right2(props) {
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description21 === ""
+                    {description21 === ""
                       ? "Successfully Managed."
-                      : props.description21}
+                      : description21}
                   </div>
                 </div>
                 <div className="m-0 p-0 d-flex">
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description22 === ""
+                    {description22 === ""
                       ? "Developed and Implemented new Marketing."
-                      : props.description22}
+                      : description22}
                   </div>
                 </div>
                 <div className="m-0 p-0 d-flex">
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description23 === ""
+                    {description23 === ""
                       ? "Improve the processes and customer service."
-                      : props.description23}
+                      : description23}
                   </div>
                 </div>
                 <div className="m-0 p-0 d-flex">
                   <code className="fs-5 m-0 p-0">&#x2015;</code>
                   &#xa0;&#xa0;
                   <div>
-                    {props.description24 === ""
+                    {description24 === ""
                       ? "Implementing a new Loyalty program."
-                      : props.description24}
+                      : description24}
                   </div>
                 </div>
               </div>
-            </div>
+            </div>}
           </div>
           <div className="my-3">
-          <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
-            <h5 className={`text-${props.color} fst-italic text-center fw-bold`}>
+          <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <h5 className={`text-${color} fst-italic text-center fw-bold`}>
               EDUCATION
             </h5>
-            <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
             <div className='my-3'>
               <h5 className="m-0 mb-1 p-0 fw-bold">
-                {props.degree === ""
+                {degree === ""
                   ? "MSc in Economics and Business Administration"
-                  : props.degree}
+                  : degree}
               </h5>
               <h6 className="m-0 p-0">
-                {props.university === ""
+                {university === ""
                   ? "The University of Chicago"
-                  : props.university}
+                  : university}
               </h6>
               <div className="fw-lighter m-0 p-0 d-flex">
                 <div>
-                  {props.datefrom3 === "" ? "2008-09" : props.datefrom3}
+                  {datefrom3 === "" ? "2008-09" : datefrom3}
                 </div>{" "}
                 &#xa0;/&#xa0;
-                <div>{props.dateto3 === "" ? "2010-06" : props.dateto3}</div>
+                <div>{dateto3 === "" ? "2010-06" : dateto3}</div>
               </div>
             </div>
           </div>
           <div className="my-3 pb-4">
-          <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
-            <h5 className={`text-${props.color} fst-italic text-center fw-bold`}>
+          <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <h5 className={`text-${color} fst-italic text-center fw-bold`}>
               ORGANIZATION
             </h5>
-            <hr className={`m-0 text-${props.color}`} />
-            <hr className={`m-0 text-${props.color}`} />
+            <hr className={`m-0 text-${color}`} />
+            <hr className={`m-0 text-${color}`} />
             <div className="my-3 p-0">
               <div className="m-0 p-0 d-flex">
                 <code className="fs-5 m-0 p-0">&#x2015;</code>
                 &#xa0;&#xa0;
                 <div>
-                  {props.description31 === ""
+                  {description31 === ""
                     ? "Successfully Managed."
-                    : props.description31}
+                    : description31}
                 </div>
               </div>
               <div className="m-0 p-0 d-flex">
                 <code className="fs-5 m-0 p-0">&#x2015;</code>
                 &#xa0;&#xa0;
                 <div>
-                  {props.description32 === ""
+                  {description32 === ""
                     ? "Developed and Implemented new Marketing."
-                    : props.description32}
+                    : description32}
                 </div>
               </div>
               <div className="m-0 p-0 d-flex">
                 <code className="fs-5 m-0 p-0">&#x2015;</code>
                 &#xa0;&#xa0;
                 <div>
-                  {props.description33 === ""
+                  {description33 === ""
                     ? "Improve the processes and customer service."
-                    : props.description33}
+                    : description33}
                 </div>
               </div>
               <div className="m-0 p-0 d-flex">
                 <code className="fs-5 m-0 p-0">&#x2015;</code>
                 &#xa0;&#xa0;
                 <div>
-                  {props.description34 === ""
+                  {description34 === ""
                     ? "Implementing a new Loyalty program."
-                    : props.description34}
+                    : description34}
                 </div>
               </div>
             </div>
