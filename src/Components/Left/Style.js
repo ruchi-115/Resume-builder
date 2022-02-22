@@ -3,7 +3,7 @@ import Context from "../../Context";
 
 function Style() {
   const context = useContext(Context);
-  const buttonColor = context[3];
+  const buttonColor = context[2];
   return (
     <section className="flex-column">
       <h1 className="text-center pb-5">Style</h1>

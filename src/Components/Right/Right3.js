@@ -48,13 +48,14 @@ function Right3() {
     description31,
     description32,
     description33,
-    description34
+    description34,
+    color,
+    wcounts
   } = context[0];
-const color = context[2];
-const wcounts = context[4];
+const ref = context[4];
   return (
     <div className="bg-white mx-2 mt-4 text-dark d-flex justify-content-center align-items-center">
-      <div className="shadow-lg" id="template" style={{ width: "800px" }}>
+      <div className="shadow-lg" ref={ref} style={{ width: "800px" }}>
         <section className="p-5 pb-2 m-0">
           <h1 className={`d-flex text-${color} mb-4 m-0 p-0 fw-bolder`}>
             {fname === "" ? "John" : fname}{" "}

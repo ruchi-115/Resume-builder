@@ -24,11 +24,10 @@ function WorkExperience() {
     description22,
     description23,
     description24,
+    wcounts
   } = context[0];
   const onChange = context[1];
-  const wcounts = context[4];
-  const { Wadd, Wremove } = context[5];
-  console.log(context[5]);
+  const { Wadd, Wremove } = context[3];
   return (
     <section className="flex-column">
       <h1 className="text-center pb-5">Work Expeience</h1>

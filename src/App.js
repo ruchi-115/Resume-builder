@@ -1,7 +1,38 @@
 import Template from "./Components/Template";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Userdata from "./Components/Userdata";
 
 function App() {
+  const data = [
+    {
+      title: "Student Resume Template",
+      Description: "No experience? No problem!",
+      link: ["1", "2", "3","1"],
+    },
+    {
+      title: "Experince Resume Template",
+      Description: "No experience? No problem!",
+      link: ["1", "2", "3"],
+    },
+  ];
+  const [user, setUser] = useState(() => {
+    let savedData = localStorage.getItem("data");
+    if (savedData) {
+      return JSON.parse(savedData);
+    } else {
+      return [];
+    }
+  });
+  const Print = (e) => {
+    setUser(() => {
+      return [...user, e];
+    });
+  };
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(user));
+  }, [user]);
+  console.log(user);
   return (
     <Router>
       <nav
@@ -10,13 +41,16 @@ function App() {
       >
         <Link className="navbar-brand fs-1 text-white" to="/">
           <i
-            class="bi bi-file-earmark-break-fill"
+            className="bi bi-file-earmark-break-fill"
             style={{ fontSize: "40px" }}
           ></i>
           ResumeBuilder
         </Link>
         <Link className="nav-link fs-4 text-white" to="/template">
           Tempaltes
+        </Link>
+        <Link className="nav-link fs-4 text-white" to="/template/q">
+          Data
         </Link>
       </nav>
       <Switch>
@@ -41,40 +75,36 @@ function App() {
           </section>
         </Route>
         <Route exact path="/template">
-          <div className="mt-5">
-            <div className="container">
-              <h2>Student Resume Template</h2>
-              <p>No experience? No problem!</p>
-            </div>
-            <div
-              className="d-flex container justify-content-around align-items-start"
-              style={{ width: "100%", height: "92vh" }}
-            >
-              <Link
-                className="shadow mx-2"
-                to="/template/1"
-                style={{ width: "350px" }}
-              >
-                <img src="1.jpg" className="card-img" alt="..." />
-              </Link>
-              <Link
-                className="shadow mx-2"
-                to="/template/2"
-                style={{ width: "350px" }}
-              >
-                <img src="2.jpg" className="card-img" alt="..." />
-              </Link>
-              <Link
-                className="shadow mx-2"
-                to="/template/3"
-                style={{ width: "350px" }}
-              >
-                <img src="3.jpg" className="card-img" alt="..." />
-              </Link>
-            </div>
-          </div>
+          {data.map((e) => {
+            return (
+              <div className="mt-5">
+                <div className="container">
+                  <h2>{e.title}</h2>
+                  <p>{e.Description}</p>
+                </div>
+                <div className="d-flex container justify-content-around align-items-start">
+                  {e.link.map((i) => {
+                    return (
+                      <Link
+                        className="shadow mx-2"
+                        to={`/template/${i}`}
+                        style={{ width: "15vw" }}
+                      >
+                        <img src={`${i}.jpg`} className="card-img" alt="..." />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
         </Route>
-        <Route exact path="/template/:id" component={Template} />
+        <Route exact path="/template/:id">
+          <Template Print={Print} />
+        </Route>
+        <Route exact path="/template/q">
+          <Userdata user={user} />
+        </Route>
       </Switch>
     </Router>
   );
