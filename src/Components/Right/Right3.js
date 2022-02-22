@@ -50,8 +50,8 @@ function Right3() {
     description33,
     description34
   } = context[0];
-const color = context[2];
-const wcounts = context[4];
+  const color = context[2];
+  const wcounts = context[4];
   return (
     <div className="bg-white mx-2 mt-4 text-dark d-flex justify-content-center align-items-center">
       <div className="shadow-lg" id="template" style={{ width: "800px" }}>
@@ -232,7 +232,7 @@ const wcounts = context[4];
                   </div>
                 </div>
               </div>
-              {wcounts===1 && <div className="my-3">
+              {wcounts === 1 && <div className="my-3">
                 <h5 className="m-0 mb-1 p-0 fw-bold">
                   {company2 === ""
                     ? "Business Development Manager"

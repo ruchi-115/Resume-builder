@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-* {
+.homepage {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -15,13 +15,119 @@ p {
     background-color: #4842B0;
 }
 
-@media only screen and (max-width: 680px) {
-    nav {
-        font-size: 25px;
-    }
 
-   .home-img {
-       display: none;
-   }
-    
+
+
+.demo {
+    height: 100vh;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+
+.demo-grid{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.demo-card{
+    margin: 2rem;
+    max-width: 400px;
+    height: 250px;
+    background: #efefef !important;
+    /* box-shadow: 5px 5px 10px #000000dd, 10px 10px 20px #00000050, -5px -5px 10px #ffffffde, -10px -10px 20px #ffffff60 !important; */
+    transition: 0.8s ease !important;
+}
+
+.demo-card:hover{
+    height: 450px;
+    box-shadow: inset 5px -5px 10px #0000007d, inset -5px -5px 10px #ffffffde, inset -10px -10px 20px #ffffff60 !important;
+}
+
+.demo-card > .MuiCardContent-root{
+    padding: 0rem ;
+}
+
+.democard-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    height: 450px;
+}
+.democard-content .cardTop{
+    width: 100%;
+    height: 50%;
+    /* background: orange; */
+	margin-bottom: 5%;
+}
+.demoCardImg1, .demoCardImg2, .demoCardImg3{
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/card1_closed.svg');
+    background-position: center;
+    transition: 0.5s ease;
+}
+.demoCardImg2{
+    background-image: url('./assets/card2_closed.svg');
+}
+.demoCardImg3{
+    background-image: url('./assets/card3_closed.svg');
+}
+.demo-card:hover .demoCardImg1{
+    background-image: url('./assets/card1_opened.svg');
+}
+.demo-card:hover .demoCardImg2{
+    background-image: url('./assets/card2_opened.svg');
+}
+.demo-card:hover .demoCardImg3{
+    background-image: url('./assets/card3_opened.svg');
+}
+
+.democard-content .cardBottom{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+	
+    font-family: 'Nunito', sans-serif !important;
+}
+
+.democard-content h2{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -3%;
+    transition: 0.5s ease;
+    font-family: 'Nunito', sans-serif !important;
+    color: #383A48b9;
+    opacity: 0.8;
+}
+
+.demo-card:hover .cardTop h2{
+    margin-top: 5%;
+    opacity: 1;
+    font-size: 1.9rem;
+}
+
+.demo-card:hover .demoCardHead{
+    color: #6D4Fc4;
+
+}
+
+.cardBottom p{
+    margin-bottom: 20px;
+    text-align: center;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
