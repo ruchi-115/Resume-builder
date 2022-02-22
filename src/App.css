@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-.homepage {
+.font {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -15,38 +15,25 @@ p {
     background-color: #4842B0;
 }
 
+.start-now{
+    background-color: #6D4Fc4;
+}
+.start-now:hover {
+    background-color: #4842B0;
 
-
-
-.demo {
-    height: 100vh;
-    background-color: #efefef;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
-
-.demo-grid{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Feature section styling */
 
 .demo-card{
     margin: 2rem;
     max-width: 400px;
-    height: 250px;
+    height: 450px;
     background: #efefef !important;
     /* box-shadow: 5px 5px 10px #000000dd, 10px 10px 20px #00000050, -5px -5px 10px #ffffffde, -10px -10px 20px #ffffff60 !important; */
-    transition: 0.8s ease !important;
-}
-
+     transition: 0.8s ease !important;
+} 
 .demo-card:hover{
-    height: 450px;
     box-shadow: inset 5px -5px 10px #0000007d, inset -5px -5px 10px #ffffffde, inset -10px -10px 20px #ffffff60 !important;
 }
 
@@ -130,4 +117,3 @@ p {
     width: 80%;
     font-size: 1.2rem;
 }
-
