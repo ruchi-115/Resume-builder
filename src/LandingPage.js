@@ -37,7 +37,7 @@ function LandingPage() {
             zIndex: -1,
           }}
         >
-          <img src="undraw_at_work_re_qotl.svg" alt="" width={"500px"} />
+          <img src="landingleft.svg" alt="" width={"500px"} />
         </div>
         <div className="mb-5 pb-5">
           <h1 className="bold">Online Resume Builder</h1>
@@ -81,7 +81,7 @@ function LandingPage() {
             zIndex: -1,
           }}
         >
-          <img src="undraw_resume_re_hkth.svg" alt="" width={"350px"} />
+          <img src="landingright.svg" alt="" width={"350px"} />
         </div>
       </div>
     </section>

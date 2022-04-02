@@ -17,7 +17,7 @@ function App() {
     {
       title: "Experince Resume Template",
       Description: "No experience? No problem!",
-      link: ["4", "5", "6"],
+      link: ["4", "5", "6", "7", "8"],
     },
   ];
   const [user, setUser] = useState(() => {
@@ -33,18 +33,22 @@ function App() {
       return [...user, e];
     });
   };
+  const alertData = () => {
+    if (!user.fname === "") {
+      console.log("hii");
+    }
+  };
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(user));
   }, [user]);
-  console.log(user);
   return (
     <Router>
       <Navbar />
       <Switch>
         <Route exact path="/">
           <LandingPage />
-          <Features />
           <About />
+          <Features />
         </Route>
         <Route exact path="/template">
           {data.map((e) => {
@@ -61,6 +65,7 @@ function App() {
                         className="shadow mx-2"
                         to={`/template/${i}`}
                         style={{ width: "20vw" }}
+                        onClick={alertData}
                       >
                         <img src={`${i}.jpg`} className="card-img" alt="..." />
                       </Link>
@@ -75,6 +80,12 @@ function App() {
           <Template Print={Print} />
         </Route>
       </Switch>
+      <footer
+        className="text-center py-3 text-light"
+        style={{ backgroundColor: "#6d4fc4" }}
+      >
+        © 2022 Copyright RB
+      </footer>
     </Router>
   );
 }

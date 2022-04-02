@@ -1,5 +1,4 @@
 import React from "react";
-import build_img from "./assets/team2.png";
 import "./App.css";
 
 function About() {
@@ -31,13 +30,13 @@ function About() {
           </p>
         </p>
       </div>
-      <div className="pt-5">
+      <div className="pe-5">
         <img
-          src="undraw_hire_re_gn5j.svg"
+          src="about.jpeg"
           width="550px"
-          height="300px"
-          className="home-img img-fluid py-5"
+          height="400px"
           alt="home img"
+          style={{ borderRadius: "500px" }}
         />
       </div>
     </section>

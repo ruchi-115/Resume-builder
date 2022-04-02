@@ -7,18 +7,18 @@ function Navbar() {
       className="nav d-flex ps-5 align-items-center"
       style={{ height: "10vh", background: "#6D4Fc4" }}
     >
-      <h1 className="navbar-brand fs-1 text-white">
-        {/* <i
-          className="bi bi-file-earmark-break-fill"
-          style={{ fontSize: "40px" }}
-        ></i> */}
-        ResumeB
-      </h1>
-      <Link className="nav-link fs-4 text-white p-0 ms-5 px-2 rounded" to="/">
+      <div className="d-flex ">
+        <img src="logo.jpeg" alt="" width="60px" />
+        <div className="fs-1 text-white fw-bold">ResumeB</div>
+      </div>
+      <Link
+        className="nav-link fs-4 fw-bold text-white p-0 ms-5 px-2 rounded"
+        to="/"
+      >
         Home
       </Link>
       <Link
-        className="nav-link fs-4 text-white p-0 ms-4 px-2 rounded"
+        className="nav-link fs-4 fw-bold text-white p-0 ms-4 px-2 rounded"
         to="/template"
       >
         Templates
