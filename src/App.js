@@ -20,6 +20,11 @@ function App() {
       Description: "No experience? No problem!",
       link: ["4", "5", "6"],
     },
+    {
+      title: "Experince Resume Template",
+      Description: "No experience? No problem!",
+      link: ["7"],
+    },
   ];
   const [user, setUser] = useState(() => {
     let savedData = localStorage.getItem("data");
@@ -41,7 +46,7 @@ function App() {
   return (
     <Router>
       <nav
-        className="nav d-flex ps-5 align-items-center homepage"
+        className="nav d-flex ps-5 align-items-center font"
         style={{ height: "8vh", background: "#6D4Fc4" }}
       >
         <Link className="navbar-brand fs-3 text-white" to="/">
