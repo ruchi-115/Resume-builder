@@ -58,7 +58,7 @@ function Right6() {
         <div className="bg-white mx-2 mt-4 text-dark d-flex justify-content-center align-items-center">
             <div className="shadow-lg" id="template" style={{ width: "800px" }}>
                 <div className="d-flex justify-content-between">
-                    <section className="p-3 pb-2 m-0 " style={{ background: "#F2F4F3" }}>
+                    <div className="p-5">
                         <h1 className={`d-flex text-${color} mb-4 m-0 p-0 fw-bolder`}>
                             {fname === "" ? "John" : fname}{" "}
                             {lname === "" ? "Doe" : lname}
@@ -73,105 +73,6 @@ function Right6() {
                                 ? " Professional Lorem ipsum dolor sit"
                                 : profession_description}
                         </div>
-                        <div className="p-0 mt-2">
-                            <section className="d-flex justify-content-start align-items-start flex-column">
-                                <div className=" my-2 p-0 d-flex  fw-lighter">
-                                    <div className={`text-${color} mx-1`}>
-                                        <ion-icon name="mail-outline"></ion-icon>
-                                    </div>
-                                    <div>
-                                        {email === "" ? "jhon.doe@gmail.com" : email}
-                                    </div>
-                                </div>
-                                <div className=" my-2  p-0 d-flex fw-lighter">
-                                    <div className={`text-${color} mx-1`}>
-                                        <ion-icon name="call-outline"></ion-icon>
-                                    </div>
-                                    <div>{phone === "" ? "202-555-0166" : phone}</div>
-                                </div>
-                                <div className=" d-flex my-2  p-0 fw-lighter">
-                                    <div className={`text-${color} mx-1`}>
-                                        <ion-icon name="location-outline"></ion-icon>
-                                    </div>
-                                    <div>
-                                        {city === "" ? "New York" : city},
-                                        {country === "" ? "USA" : country}
-                                    </div>
-                                </div>
-                                <div className=" my-2 p-0 d-flex fw-lighter">
-                                    <div className={`text-${color} mx-1`}>
-                                        <ion-icon name="logo-linkedIn"></ion-icon>
-                                    </div>
-                                    <div>
-                                        {linkedIn === "" ? "linkedin.com" : linkedIn}
-                                    </div>
-                                </div>
-                                <div className=" my-2  p-0 d-flex fw-lighter">
-                                    <div className={`text-${color} mx-1`}>
-                                        <ion-icon name="logo-github"></ion-icon>
-                                    </div>
-                                    <div> {github === "" ? "github.com" : github}</div>
-                                </div>
-                            </section>
-
-                            <div className="my-3">
-                                <h5
-                                    className={`text-${color} fst-italic fw-bold`}
-                                >
-                                    SKILLS
-                                </h5>
-                                <hr className={`m-0 text-${color}`} />
-                                <hr className={`m-0 text-${color}`} />
-                                <div className="d-flex flex-column justify-content-start align-items-start my-3 ">
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill1 === "" ? "SEO" : skill1}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill2 === "" ? "Public Speaking" : skill2}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill3 === "" ? "Negotiation" : skill3}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill4 === "" ? "Decision Making" : skill4}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill5 === "" ? "Research & Strategy" : skill5}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill6 === ""
-                                            ? "Emotional Intelligence"
-                                            : skill6}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill7 === "" ? "Outbound Marketing" : skill7}
-                                    </button>
-                                    <button
-                                        className={`btn btn-${color} text-white m-1 btn-sm`}
-                                    >
-                                        {skill8 === "" ? "Email Marketing" : skill8}
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    {/* <div className="px-5 d-flex"> */}
-
-                    <div className="px-5">
                         <div className="my-3 ">
                             <h5 className={`text-${color} fst-italic  fw-bold`}>
                                 WORK EXPERINCE
@@ -358,6 +259,105 @@ function Right6() {
                             </div>
                         </div>
                     </div>
+                    <section className={`p-3 pb-2 m-0 bg-${color}`}>
+                        <div className="p-0 mt-2">
+                            <section className="d-flex justify-content-start align-items-start flex-column text-white">
+                                <div className=" my-2 p-0 d-flex  fw-lighter">
+                                    <div className={`text-white mx-1`}>
+                                        <ion-icon name="mail-outline"></ion-icon>
+                                    </div>
+                                    <div>
+                                        {email === "" ? "jhon.doe@gmail.com" : email}
+                                    </div>
+                                </div>
+                                <div className=" my-2  p-0 d-flex fw-lighter">
+                                    <div className={`text-white mx-1`}>
+                                        <ion-icon name="call-outline"></ion-icon>
+                                    </div>
+                                    <div>{phone === "" ? "202-555-0166" : phone}</div>
+                                </div>
+                                <div className=" d-flex my-2  p-0 fw-lighter">
+                                    <div className={`text-white mx-1`}>
+                                        <ion-icon name="location-outline"></ion-icon>
+                                    </div>
+                                    <div>
+                                        {city === "" ? "New York" : city},
+                                        {country === "" ? "USA" : country}
+                                    </div>
+                                </div>
+                                <div className=" my-2 p-0 d-flex fw-lighter">
+                                    <div className={`text-white mx-1`}>
+                                        <ion-icon name="logo-linkedIn"></ion-icon>
+                                    </div>
+                                    <div>
+                                        {linkedIn === "" ? "linkedin.com" : linkedIn}
+                                    </div>
+                                </div>
+                                <div className=" my-2  p-0 d-flex fw-lighter">
+                                    <div className={`text-white mx-1`}>
+                                        <ion-icon name="logo-github"></ion-icon>
+                                    </div>
+                                    <div> {github === "" ? "github.com" : github}</div>
+                                </div>
+                            </section>
+
+                            <div className="my-3">
+                                <h5
+                                    className={`text-white fst-italic fw-bold`}
+                                >
+                                    SKILLS
+                                </h5>
+                                <hr className={`m-0 text-${color}`} />
+                                <hr className={`m-0 text-${color}`} />
+                                <div className="d-flex flex-column justify-content-start align-items-start my-3 ">
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill1 === "" ? "SEO" : skill1}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill2 === "" ? "Public Speaking" : skill2}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill3 === "" ? "Negotiation" : skill3}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill4 === "" ? "Decision Making" : skill4}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill5 === "" ? "Research & Strategy" : skill5}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill6 === ""
+                                            ? "Emotional Intelligence"
+                                            : skill6}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill7 === "" ? "Outbound Marketing" : skill7}
+                                    </button>
+                                    <button
+                                        className={`btn btn-light text-${color} m-1 btn-sm`}
+                                    >
+                                        {skill8 === "" ? "Email Marketing" : skill8}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* <div className="px-5 d-flex"> */}
+
                 </div>
             </div>
         </div>
