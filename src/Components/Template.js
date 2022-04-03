@@ -8,7 +8,8 @@ import Style from "./Left/Style";
 import { useParams } from "react-router-dom";
 import * as Right from "./Right/Right";
 import Context from "../Context";
-import Pdf from "react-to-pdf";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
 
 function Template() {
   const [target, setTarget] = useState(() => {
@@ -63,9 +64,9 @@ function Template() {
         description32: "",
         description33: "",
         description34: "",
-        color:"primary",
-        npcounts:0,
-        wcounts:0,
+        color: "primary",
+        npcounts: 0,
+        wcounts: 0,
       };
     }
   });
@@ -83,9 +84,9 @@ function Template() {
   }, [target]);
   const params = useParams();
   const buttonColor = (e) => {
-    setTarget(()=>{
-      return {...target,
-   color:e}});
+    setTarget(() => {
+      return { ...target, color: e };
+    });
   };
 
   const template = (e) => {
@@ -93,24 +94,24 @@ function Template() {
     return <Card />;
   };
   const Next = () => {
-    setTarget(()=>{
-       return {...target,
-    npcounts:target.npcounts+1}});
+    setTarget(() => {
+      return { ...target, npcounts: target.npcounts + 1 };
+    });
   };
   const Previous = () => {
-    setTarget(()=>{
-      return {...target,
-   npcounts:target.npcounts-1}});
+    setTarget(() => {
+      return { ...target, npcounts: target.npcounts - 1 };
+    });
   };
   const Wadd = () => {
-    setTarget(()=>{
-      return {...target,
-   wcounts:1}});
+    setTarget(() => {
+      return { ...target, wcounts: 1 };
+    });
   };
   const Wremove = () => {
-    setTarget(()=>{
-      return {...target,
-   wcounts:0}});
+    setTarget(() => {
+      return { ...target, wcounts: 0 };
+    });
   };
   const ref = React.createRef();
   const Print = () => {
@@ -120,30 +121,35 @@ function Template() {
     window.print();
     document.body.innerHTML = originalContents;
   };
-  const options = {
-    orientation: "landscape",
-    unit: "in",
-    format: [4, 2],
+  let handleElement = {
+    "#editor": function (element, renderer) {
+      return true;
+    },
+  };
+  const downloadPdfDocument = () => {
+    const template = document.getElementById("template");
+    html2canvas(template).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF({
+        orientation: "p",
+        unit: "mm",
+        // format: [700, 490],
+        format: [233, 290],
+        // 233 350
+      });
+      pdf.addImage(imgData, "JPEG", 0, 0);
+      pdf.save(`save.pdf`);
+    });
   };
   return (
     <Context.Provider
-      value={[
-        target,
-        onChange,
-        buttonColor,
-        { Wadd, Wremove },
-        ref,
-      ]}
+      value={[target, onChange, buttonColor, { Wadd, Wremove }]}
     >
       <div className="d-flex text-dark justify-content-around align-items-start">
         <div
           className="d-flex flex-column justify-content-center p-5 m-0"
           style={{ width: "600px", height: "100%" }}
         >
-          <button onClick={()=>{
-            localStorage.removeItem('template');
-            window.location.reload();
-          }}>clear</button>
           {target.npcounts === 0 && <Header />}
           {target.npcounts === 1 && <Skills />}
           {target.npcounts === 2 && <WorkExperience />}
@@ -169,19 +175,10 @@ function Template() {
             {target.npcounts === 5 && (
               <button
                 className="btn bg-dark text-white fs-5 btn-lg shadow"
-                onClick={Print}
+                onClick={downloadPdfDocument}
               >
                 Print
               </button>
-              // <Pdf
-              //   targetRef={ref}
-              //   filename="post.pdf"
-              //   x={0.5}
-              //   y={0.5}
-              //   scale={0.8}
-              // >
-              //   {({ toPdf }) => <button onClick={toPdf}>Capture as PDF</button>}
-              // </Pdf>
             )}
           </div>
         </div>

@@ -51,12 +51,11 @@ function Right1() {
     description33,
     description34,
     color,
-    wcounts
+    wcounts,
   } = context[0];
-const ref = context[4];
   return (
-    <div className="bg-white mx-2 mt-4 text-dark d-flex justify-content-center align-items-center">
-      <div className="shadow-lg" ref={ref} style={{ width: "800px" }}>
+    <div className="bg-white mx-2 my-4 text-dark d-flex justify-content-center align-items-center">
+      <div className="shadow-lg" id="template" style={{ width: "800px" }}>
         <section className="p-5 pb-2 m-0">
           <h1 className={`d-flex text-${color} mb-4 m-0 p-0 fw-bolder`}>
             {fname === "" ? "John" : fname} {lname === "" ? "Doe" : lname}
@@ -201,62 +200,64 @@ const ref = context[4];
                 </div>
               </div>
             </div>
-            {wcounts===1 && <div className="my-3">
-              <h5 className="m-0 mb-1 p-0 fw-bold">
-                {company2 === "" ? "Business Development Manager" : company2}
-              </h5>
-              <h6 className="m-0 p-0">
-                {title2 === "" ? "AirState Solutions" : title2}
-              </h6>
-              <div className="d-flex justify-content-between m-0 p-0">
-                <div className="fw-lighter d-flex">
-                  {datefrom2 === "" ? "2014-09" : datefrom2},
-                  {dateto2 === "" ? "2017-06" : dateto2}
+            {wcounts === 1 && (
+              <div className="my-3">
+                <h5 className="m-0 mb-1 p-0 fw-bold">
+                  {company2 === "" ? "Business Development Manager" : company2}
+                </h5>
+                <h6 className="m-0 p-0">
+                  {title2 === "" ? "AirState Solutions" : title2}
+                </h6>
+                <div className="d-flex justify-content-between m-0 p-0">
+                  <div className="fw-lighter d-flex">
+                    {datefrom2 === "" ? "2014-09" : datefrom2},
+                    {dateto2 === "" ? "2017-06" : dateto2}
+                  </div>
+                  <div className="fw-lighter d-flex">
+                    <div>{city2 === "" ? "Chicago" : city2}</div>,
+                    <div>{country2 === "" ? "USA" : country2}</div>
+                  </div>
                 </div>
-                <div className="fw-lighter d-flex">
-                  <div>{city2 === "" ? "Chicago" : city2}</div>,
-                  <div>{country2 === "" ? "USA" : country2}</div>
+                <div className="m-0 p-0">
+                  <div className="m-0 p-0 d-flex">
+                    <code className="fs-5 m-0 p-0">&#x2015;</code>
+                    &#xa0;&#xa0;
+                    <div>
+                      {description21 === ""
+                        ? "Successfully Managed."
+                        : description21}
+                    </div>
+                  </div>
+                  <div className="m-0 p-0 d-flex">
+                    <code className="fs-5 m-0 p-0">&#x2015;</code>
+                    &#xa0;&#xa0;
+                    <div>
+                      {description22 === ""
+                        ? "Developed and Implemented new Marketing."
+                        : description22}
+                    </div>
+                  </div>
+                  <div className="m-0 p-0 d-flex">
+                    <code className="fs-5 m-0 p-0">&#x2015;</code>
+                    &#xa0;&#xa0;
+                    <div>
+                      {description23 === ""
+                        ? "Improve the processes and customer service."
+                        : description23}
+                    </div>
+                  </div>
+                  <div className="m-0 p-0 d-flex">
+                    <code className="fs-5 m-0 p-0">&#x2015;</code>
+                    &#xa0;&#xa0;
+                    <div>
+                      {description24 === ""
+                        ? "Implementing a new Loyalty program."
+                        : description24}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="m-0 p-0">
-                <div className="m-0 p-0 d-flex">
-                  <code className="fs-5 m-0 p-0">&#x2015;</code>
-                  &#xa0;&#xa0;
-                  <div>
-                    {description21 === ""
-                      ? "Successfully Managed."
-                      : description21}
-                  </div>
-                </div>
-                <div className="m-0 p-0 d-flex">
-                  <code className="fs-5 m-0 p-0">&#x2015;</code>
-                  &#xa0;&#xa0;
-                  <div>
-                    {description22 === ""
-                      ? "Developed and Implemented new Marketing."
-                      : description22}
-                  </div>
-                </div>
-                <div className="m-0 p-0 d-flex">
-                  <code className="fs-5 m-0 p-0">&#x2015;</code>
-                  &#xa0;&#xa0;
-                  <div>
-                    {description23 === ""
-                      ? "Improve the processes and customer service."
-                      : description23}
-                  </div>
-                </div>
-                <div className="m-0 p-0 d-flex">
-                  <code className="fs-5 m-0 p-0">&#x2015;</code>
-                  &#xa0;&#xa0;
-                  <div>
-                    {description24 === ""
-                      ? "Implementing a new Loyalty program."
-                      : description24}
-                  </div>
-                </div>
-              </div>
-            </div>}
+            )}
           </div>
           <div className="my-3">
             <h5 className={`text-${color} fst-italic fw-bold`}>EDUCATION</h5>
