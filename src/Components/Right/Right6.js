@@ -357,7 +357,6 @@ function Right6() {
                         </div>
                     </section>
                     {/* <div className="px-5 d-flex"> */}
-
                 </div>
             </div>
         </div>
