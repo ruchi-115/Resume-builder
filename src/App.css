@@ -12,3 +12,6 @@
 .start-now:hover {
   background-color: #4842b0;
 }
+.rect1 {
+  background: url("./assets/rectangle.svg");
+}
