@@ -1,5 +1,5 @@
 import Template from "./Components/Template";
-import Features from "./Features";
+import Features from "./features";
 import About from "./About";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
