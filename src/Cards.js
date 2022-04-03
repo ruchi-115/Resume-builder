@@ -6,12 +6,12 @@ function Cards() {
     {
       title: "Student Section",
       Description: "No experience? No problem!",
-      link: ["1", "2", "3"],
+      link: ["1", "2", "3", "4"],
     },
     {
       title: "Experince Section",
       Description: "No experience? No problem!",
-      link: ["4", "5", "6", "7", "8"],
+      link: ["5", "6", "7", "8"],
     },
   ];
   let history = useHistory();
