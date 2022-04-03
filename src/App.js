@@ -13,12 +13,12 @@ function App() {
     {
       title: "Student Resume Template",
       Description: "No experience? No problem!",
-      link: ["1", "2", "3"],
+      link: ["1", "2", "3", "4"],
     },
     {
       title: "Experince Resume Template",
       Description: "No experience? No problem!",
-      link: ["4", "5", "6", "7", "8"],
+      link: ["5", "6", "7", "8"],
     },
   ];
   const [user, setUser] = useState(() => {
@@ -47,7 +47,7 @@ function App() {
   }, [user]);
   return (
     <Router>
-      <Alert />
+      {/* <Alert /> */}
       <Navbar />
       <Switch>
         <Route exact path="/">
@@ -89,21 +89,29 @@ function App() {
                   <div className="pb-3 d-flex container justify-content-around align-items-start">
                     {e.link.map((i) => {
                       return (
-                        <button
-                          type="button"
-                          className="btn shadow mx-2 p-0"
-                          data-bs-toggle="modal"
-                          data-bs-target="#staticBackdrop"
+                        // <button
+                        //   type="button"
+                        //   className="btn shadow mx-2 p-0"
+                        //   data-bs-toggle="modal"
+                        //   data-bs-target="#staticBackdrop"
+                        //   style={{ width: "20vw" }}
+                        //   onClick={alertData}
+                        //   to={`/template/${i}`}
+                        // >
+                        //   <img
+                        //     src={`${i}.jpg`}
+                        //     className="card-img"
+                        //     alt="..."
+                        //   />
+                        // </button>
+                        <Link
+                          className="shadow mx-2"
+                          to={`/template/${i}`}
                           style={{ width: "20vw" }}
                           onClick={alertData}
-                          // to={`/template/${i}`}
                         >
-                          <img
-                            src={`${i}.jpg`}
-                            className="card-img"
-                            alt="..."
-                          />
-                        </button>
+                          <img src={`${i}.jpg`} className="card-img" alt="..." />
+                        </Link>
                       );
                     })}
                   </div>

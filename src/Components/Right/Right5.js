@@ -53,10 +53,10 @@ function Right5() {
         color,
         wcounts
     } = context[0];
-    const ref = context[4];
+    // const ref = context[4];
     return (
         <div className="bg-white mx-2 mt-4 text-dark d-flex justify-content-center align-items-center">
-            <div className="shadow-lg" ref={ref} style={{ width: "800px" }}>
+            <div className="shadow-lg" id="template" style={{ width: "800px" }}>
                 <div className="d-flex justify-content-between">
                     <section className="p-3 pb-2 m-0 " style={{ background: "#0d183a" }}>
                         <h1 className={`d-flex text-${color} mb-4 m-0 p-0 fw-bolder`}>
