@@ -134,7 +134,7 @@ function Template() {
         orientation: "p",
         unit: "mm",
         // format: [700, 490],
-        format: [233, 290],
+        format: [233, 300],
         // 233 350
       });
       pdf.addImage(imgData, "JPEG", 0, 0);
