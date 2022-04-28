@@ -19,7 +19,7 @@ function Education() {
             name="degree"
             value={degree}
             id="degree"
-            placeholder="e.g."
+            placeholder="e.g. MSc in Economics and Business Administration"
             onChange={onChange}
           />
         </div>
@@ -33,7 +33,7 @@ function Education() {
             name="university"
             value={university}
             id="university"
-            placeholder="e.g."
+            placeholder="e.g. The University of Chicago"
             onChange={onChange}
           />
         </div>

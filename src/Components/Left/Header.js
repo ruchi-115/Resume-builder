@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import Context from "../../Context"
+import React, { useContext } from "react";
+import Context from "../../Context";
 
 function Header() {
   const context = useContext(Context);
@@ -13,7 +13,7 @@ function Header() {
     city,
     country,
     linkedIn,
-    github
+    github,
   } = context[0];
   const onChange = context[1];
   return (
@@ -30,7 +30,7 @@ function Header() {
             name="fname"
             value={fname}
             id="heading_name"
-            placeholder="e.g. Jhon"
+            placeholder="e.g. John"
             onChange={onChange}
           />
         </div>
@@ -72,7 +72,7 @@ function Header() {
             name="profession_description"
             value={profession_description}
             id="heading_description"
-            placeholder="e.g."
+            placeholder="e.g. Professional Lorem ipsum dolor sit"
             onChange={onChange}
           />
         </div>
@@ -86,7 +86,7 @@ function Header() {
             name="email"
             value={email}
             id="heading_email"
-            placeholder="e.g. jhon.doe@gmail.com"
+            placeholder="e.g. john.doe@gmail.com"
             onChange={onChange}
           />
         </div>

@@ -48,7 +48,7 @@ function WorkExperience() {
               name="company1"
               value={company1}
               id="company1"
-              placeholder="e.g."
+              placeholder="e.g. Business Development Manager"
               onChange={onChange}
             />
           </div>
@@ -65,7 +65,7 @@ function WorkExperience() {
                 name="title1"
                 value={title1}
                 id="title1"
-                placeholder="e.g."
+                placeholder="e.g. AirState Solutions"
                 onChange={onChange}
               />
             </div>
@@ -103,7 +103,7 @@ function WorkExperience() {
                 name="city1"
                 value={city1}
                 id="city1"
-                placeholder="e.g."
+                placeholder="e.g. New York"
                 onChange={onChange}
               />
             </div>
@@ -121,7 +121,7 @@ function WorkExperience() {
                 name="country1"
                 value={country1}
                 id="country1"
-                placeholder="e.g."
+                placeholder="e.g. USA"
                 onChange={onChange}
               />
             </div>
@@ -133,7 +133,7 @@ function WorkExperience() {
               className="form-control my-2"
               name="description11"
               value={description11}
-              placeholder="e.g."
+              placeholder="e.g. Successfully Managed."
               onChange={onChange}
             />
           </div>
@@ -143,7 +143,7 @@ function WorkExperience() {
               className="form-control my-2"
               name="description12"
               value={description12}
-              placeholder="e.g."
+              placeholder="e.g. Developed and Implemented new Marketing."
               onChange={onChange}
             />
           </div>
@@ -153,7 +153,7 @@ function WorkExperience() {
               className="form-control my-2"
               name="description13"
               value={description13}
-              placeholder="e.g."
+              placeholder="e.g. Improve the processes and customer service."
               onChange={onChange}
             />
           </div>
@@ -163,7 +163,8 @@ function WorkExperience() {
               className="form-control my-2"
               name="description14"
               value={description14}
-              placeholder="e.g."
+              placeholder="e.g. Implementing a new Loyalty program.
+              "
               onChange={onChange}
             />
           </div>
@@ -183,7 +184,7 @@ function WorkExperience() {
                 name="company2"
                 value={company2}
                 id="company2"
-                placeholder="e.g."
+                placeholder="e.g. Business Development Manager"
                 onChange={onChange}
               />
             </div>
@@ -200,7 +201,7 @@ function WorkExperience() {
                   name="title2"
                   value={title2}
                   id="title2"
-                  placeholder="Tittle"
+                  placeholder="e.g. AirState Solutions"
                   onChange={onChange}
                 />
               </div>
@@ -238,7 +239,7 @@ function WorkExperience() {
                   name="city2"
                   value={city2}
                   id="city2"
-                  placeholder="e.g."
+                  placeholder="e.g. Chicago"
                   onChange={onChange}
                 />
               </div>
@@ -256,7 +257,7 @@ function WorkExperience() {
                   name="country2"
                   value={country2}
                   id="country2"
-                  placeholder="e.g."
+                  placeholder="e.g. USA"
                   onChange={onChange}
                 />
               </div>
@@ -268,7 +269,7 @@ function WorkExperience() {
                 className="form-control my-2"
                 name="description21"
                 value={description21}
-                placeholder="e.g."
+                placeholder="e.g. Successfully Managed."
                 onChange={onChange}
               />
             </div>
@@ -278,7 +279,7 @@ function WorkExperience() {
                 className="form-control my-2"
                 name="description22"
                 value={description22}
-                placeholder="e.g."
+                placeholder="e.g. Developed and Implemented new Marketing."
                 onChange={onChange}
               />
             </div>
@@ -288,7 +289,7 @@ function WorkExperience() {
                 className="form-control my-2"
                 name="description23"
                 value={description23}
-                placeholder="e.g."
+                placeholder="e.g. Improve the processes and customer service."
                 onChange={onChange}
               />
             </div>
@@ -298,7 +299,8 @@ function WorkExperience() {
                 className="form-control my-2"
                 name="description24"
                 value={description24}
-                placeholder="e.g."
+                placeholder="e.g. Implementing a new Loyalty program.
+                "
                 onChange={onChange}
               />
             </div>

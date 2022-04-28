@@ -133,7 +133,7 @@ function Template() {
           style={{ width: "600px", height: "100%" }}
         >
           <button
-            className="btn position-absolute border shadow rounded p-2 py-1"
+            className="btn position-absolute border shadow rounded p-2 py-1 zoom"
             data-bs-toggle="tooltip"
             data-bs-placement="right"
             title="Delete the Data"

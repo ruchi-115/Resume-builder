@@ -3,12 +3,8 @@ import Context from "../../Context";
 
 function Organization() {
   const context = useContext(Context);
-  const {
-    description31,
-    description32,
-    description33,
-    description34
-  } = context[0];
+  const { description31, description32, description33, description34 } =
+    context[0];
   const onChange = context[1];
   return (
     <section className="flex-column">
@@ -20,7 +16,7 @@ function Organization() {
             className="form-control my-2"
             name="description31"
             value={description31}
-            placeholder="e.g."
+            placeholder="e.g. Successfully Managed."
             onChange={onChange}
           />
         </div>
@@ -30,7 +26,7 @@ function Organization() {
             className="form-control my-2"
             name="description32"
             value={description32}
-            placeholder="e.g."
+            placeholder="e.g. Developed and Implemented new Marketing."
             onChange={onChange}
           />
         </div>
@@ -40,7 +36,7 @@ function Organization() {
             className="form-control my-2"
             name="description33"
             value={description33}
-            placeholder="e.g."
+            placeholder="e.g. Improve the processes and customer service."
             onChange={onChange}
           />
         </div>
@@ -50,7 +46,7 @@ function Organization() {
             className="form-control my-2"
             name="description34"
             value={description34}
-            placeholder="e.g."
+            placeholder="e.g. Implementing a new Loyalty program."
             onChange={onChange}
           />
         </div>
