@@ -113,7 +113,6 @@ function Template() {
       return { ...target, wcounts: 0 };
     });
   };
-  const ref = React.createRef();
   const Print = () => {
     var printContents = document.getElementById("template").innerHTML;
     var originalContents = document.body.innerHTML;
@@ -121,20 +120,16 @@ function Template() {
     window.print();
     document.body.innerHTML = originalContents;
   };
-  let handleElement = {
-    "#editor": function (element, renderer) {
-      return true;
-    },
-  };
+
   const downloadPdfDocument = () => {
     const template = document.getElementById("template");
     html2canvas(template).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF({
         orientation: "p",
-        unit: "mm",
-        // format: [700, 490],
-        format: [233, 300],
+        unit: "px",
+        format: [700, 562],
+        // format: [265, 300],
         // 233 350
       });
       pdf.addImage(imgData, "JPEG", 0, 0);
@@ -147,8 +142,8 @@ function Template() {
     >
       <div className="d-flex text-dark justify-content-around align-items-start">
         <div
-          className="d-flex flex-column justify-content-center p-5 m-0"
-          style={{ width: "600px", height: "100%" }}
+          className="d-flex flex-column justify-content-center py-5 m-0"
+          style={{ maxWidth: "550px", height: "100%" }}
         >
           {target.npcounts === 0 && <Header />}
           {target.npcounts === 1 && <Skills />}
@@ -175,7 +170,7 @@ function Template() {
             {target.npcounts === 5 && (
               <button
                 className="btn bg-dark text-white fs-5 btn-lg shadow"
-                onClick={downloadPdfDocument}
+                onClick={Print}
               >
                 Print
               </button>

@@ -9,33 +9,33 @@ function Style() {
       <h1 className="text-center pb-5">Style</h1>
       <div className="d-flex  justify-content-between">
         <button
-          className="btn btn-info btn-lg shadow"
-          onClick={() =>{buttonColor('info')}}
+          className="btn btn-info btn-lg shadow mx-1"
+          onClick={() => { buttonColor('info') }}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
-          className="btn btn-dark btn-lg shadow"
-          onClick={() =>{buttonColor('dark')}}
+          className="btn btn-dark btn-lg shadow mx-1"
+          onClick={() => { buttonColor('dark') }}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
-          className="btn btn-danger btn-lg shadow"
-          onClick={() =>{buttonColor('danger')}}
+          className="btn btn-danger btn-lg shadow mx-1"
+          onClick={() => { buttonColor('danger') }}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
-          className="btn btn-success btn-lg shadow"
-          onClick={() =>{buttonColor('success')}}
+          className="btn btn-success btn-lg shadow mx-1"
+          onClick={() => { buttonColor('success') }}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
-          className="btn btn-secondary btn-lg shadow"
-          onClick={() =>{buttonColor('secondary')}}
+          className="btn btn-secondary btn-lg shadow mx-1"
+          onClick={() => { buttonColor('secondary') }}
           style={{ width: "50px", height: "50px" }}
         ></button>
         <button
-          className="btn btn-primary btn-lg shadow"
-          onClick={() =>{buttonColor('primary')}}
+          className="btn btn-primary btn-lg shadow mx-1"
+          onClick={() => { buttonColor('primary') }}
           style={{ width: "50px", height: "50px" }}
         ></button>
       </div>
