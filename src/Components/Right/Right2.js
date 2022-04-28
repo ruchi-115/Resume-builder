@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import Context from "../../Context";
+import { useParams } from "react-router-dom";
+
 function Right2() {
+  const params = useParams();
   const context = useContext(Context);
   const {
     fname,
@@ -145,7 +148,7 @@ function Right2() {
             <hr className={`m-0 text-${color}`} />
             <hr className={`m-0 text-${color}`} />
             <h5 className={`text-${color} text-center fst-italic fw-bold`}>
-              WORK EXPERINCE
+              {params.id[0] === "S" ? "PROJECTS" : "WORK EXPERINCE"}
             </h5>
             <hr className={`m-0 text-${color}`} />
             <hr className={`m-0 text-${color}`} />
@@ -153,18 +156,26 @@ function Right2() {
               <h5 className="m-0 mb-1 p-0 fw-bold">
                 {company1 === "" ? "Business Development Manager" : company1}
               </h5>
-              <h6 className="m-0 p-0">
-                {title1 === "" ? "AirState Solutions" : title1}
-              </h6>
+              {params.id[0] === "S" ? (
+                ""
+              ) : (
+                <h6 className="m-0 p-0">
+                  {title1 === "" ? "AirState Solutions" : title1}
+                </h6>
+              )}
               <div className="d-flex justify-content-between m-0 p-0">
                 <div className="fw-lighter d-flex">
                   {datefrom1 === "" ? "2014-09" : datefrom1} /{" "}
                   {dateto1 === "" ? "2017-06" : dateto1}
                 </div>
-                <div className="fw-lighter d-flex">
-                  {city1 === "" ? "New York" : city1},
-                  {country1 === "" ? "USA" : country1}
-                </div>
+                {params.id[0] === "S" ? (
+                  ""
+                ) : (
+                  <div className="fw-lighter d-flex">
+                    {city1 === "" ? "New York" : city1},
+                    {country1 === "" ? "USA" : country1}
+                  </div>
+                )}
               </div>
               <div className="m-0 p-0">
                 <div className="m-0 p-0 d-flex">
@@ -210,19 +221,27 @@ function Right2() {
                 <h5 className="m-0 mb-1 p-0 fw-bold">
                   {company2 === "" ? "Business Development Manager" : company2}
                 </h5>
-                <h6 className="m-0 p-0">
-                  {title2 === "" ? "AirState Solutions" : title2}
-                </h6>
+                {params.id[0] === "S" ? (
+                  ""
+                ) : (
+                  <h6 className="m-0 p-0">
+                    {title2 === "" ? "AirState Solutions" : title2}
+                  </h6>
+                )}
                 <div className="d-flex justify-content-between m-0 p-0">
                   <div className="fw-lighter d-flex">
                     <div>{datefrom2 === "" ? "2014-09" : datefrom2}</div>
                     &#xa0;/&#xa0;
                     <div>{dateto2 === "" ? "2017-06" : dateto2}</div>
                   </div>
-                  <div className="fw-lighter d-flex">
-                    <div>{city2 === "" ? "Chicago" : city2}</div>,
-                    <div>{country2 === "" ? "USA" : country2}</div>
-                  </div>
+                  {params.id[0] === "S" ? (
+                    ""
+                  ) : (
+                    <div className="fw-lighter d-flex">
+                      <div>{city2 === "" ? "Chicago" : city2}</div>,
+                      <div>{country2 === "" ? "USA" : country2}</div>
+                    </div>
+                  )}
                 </div>
                 <div className="m-0 p-0">
                   <div className="m-0 p-0 d-flex">

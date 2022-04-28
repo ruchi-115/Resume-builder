@@ -29,7 +29,7 @@ function App() {
         className="text-center py-3 text-light"
         style={{ backgroundColor: "#6d4fc4" }}
       >
-        © 2022 Copyright RB
+        © 2022 Copyright ResumeB
       </footer>
     </Router>
   );

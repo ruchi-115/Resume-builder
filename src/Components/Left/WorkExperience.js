@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import Context from "../../Context";
+import { useParams } from "react-router-dom";
 
 function WorkExperience() {
+  const params = useParams();
   const context = useContext(Context);
   const {
     company1,
@@ -24,17 +26,19 @@ function WorkExperience() {
     description22,
     description23,
     description24,
-    wcounts
+    wcounts,
   } = context[0];
   const onChange = context[1];
   const { Wadd, Wremove } = context[3];
   return (
     <section className="flex-column">
-      <h1 className="text-center pb-5">Work Expeience</h1>
+      <h1 className="text-center pb-5">
+        {params.id[0] === "S" ? "Projects" : "Work Expeience"}
+      </h1>
       <div>
-        <h3>Company 1</h3>
+        <h3>{params.id[0] === "S" ? "Project 1" : "Company 1"}</h3>
         <form className="row g-3 py-4">
-          <div className="col-md-6">
+          <div className={`col-md-${params.id[0] === "S" ? "12" : "6"}`}>
             <label htmlFor="company1" className="form-label">
               Name
             </label>
@@ -48,20 +52,24 @@ function WorkExperience() {
               onChange={onChange}
             />
           </div>
-          <div className="col-md-6">
-            <label htmlFor="title1" className="form-label">
-              Title
-            </label>
-            <input
-              type="text"
-              className="form-control my-2"
-              name="title1"
-              value={title1}
-              id="title1"
-              placeholder="e.g."
-              onChange={onChange}
-            />
-          </div>
+          {params.id[0] === "S" ? (
+            ""
+          ) : (
+            <div className="col-md-6">
+              <label htmlFor="title1" className="form-label">
+                Title
+              </label>
+              <input
+                type="text"
+                className="form-control my-2"
+                name="title1"
+                value={title1}
+                id="title1"
+                placeholder="e.g."
+                onChange={onChange}
+              />
+            </div>
+          )}
           <div className="col-md-6">
             <label className="form-label">Date</label>
             <input
@@ -82,34 +90,42 @@ function WorkExperience() {
               onChange={onChange}
             />
           </div>
-          <div className="col-md-6">
-            <label htmlFor="city1" className="form-label">
-              City
-            </label>
-            <input
-              type="text"
-              className="form-control my-2"
-              name="city1"
-              value={city1}
-              id="city1"
-              placeholder="e.g."
-              onChange={onChange}
-            />
-          </div>
-          <div className="col-md-6">
-            <label htmlFor="country1" className="form-label">
-              Country
-            </label>
-            <input
-              type="text"
-              className="form-control my-2"
-              name="country1"
-              value={country1}
-              id="country1"
-              placeholder="e.g."
-              onChange={onChange}
-            />
-          </div>
+          {params.id[0] === "S" ? (
+            ""
+          ) : (
+            <div className="col-md-6">
+              <label htmlFor="city1" className="form-label">
+                City
+              </label>
+              <input
+                type="text"
+                className="form-control my-2"
+                name="city1"
+                value={city1}
+                id="city1"
+                placeholder="e.g."
+                onChange={onChange}
+              />
+            </div>
+          )}
+          {params.id[0] === "S" ? (
+            ""
+          ) : (
+            <div className="col-md-6">
+              <label htmlFor="country1" className="form-label">
+                Country
+              </label>
+              <input
+                type="text"
+                className="form-control my-2"
+                name="country1"
+                value={country1}
+                id="country1"
+                placeholder="e.g."
+                onChange={onChange}
+              />
+            </div>
+          )}
           <div className="col-md-12">Description</div>
           <div className="col-md-12">
             <textarea
@@ -155,9 +171,9 @@ function WorkExperience() {
       </div>
       {wcounts === 1 && (
         <div>
-          <h3>Company 2</h3>
+          <h3>{params.id[0] === "S" ? "Project 2" : "Company 2"}</h3>
           <form className="row g-3 py-4">
-            <div className="col-md-6">
+            <div className={`col-md-${params.id[0] === "S" ? "12" : "6"}`}>
               <label htmlFor="company2" className="form-label">
                 Name
               </label>
@@ -171,20 +187,24 @@ function WorkExperience() {
                 onChange={onChange}
               />
             </div>
-            <div className="col-md-6">
-              <label htmlFor="title2" className="form-label">
-                Title
-              </label>
-              <input
-                type="text"
-                className="form-control my-2"
-                name="title2"
-                value={title2}
-                id="title2"
-                placeholder="Tittle"
-                onChange={onChange}
-              />
-            </div>
+            {params.id[0] === "S" ? (
+              ""
+            ) : (
+              <div className="col-md-6">
+                <label htmlFor="title2" className="form-label">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  className="form-control my-2"
+                  name="title2"
+                  value={title2}
+                  id="title2"
+                  placeholder="Tittle"
+                  onChange={onChange}
+                />
+              </div>
+            )}
             <div className="col-md-6">
               <label className="form-label">Date</label>
               <input
@@ -205,34 +225,42 @@ function WorkExperience() {
                 onChange={onChange}
               />
             </div>
-            <div className="col-md-6">
-              <label htmlFor="city2" className="form-label">
-                City
-              </label>
-              <input
-                type="text"
-                className="form-control my-2"
-                name="city2"
-                value={city2}
-                id="city2"
-                placeholder="e.g."
-                onChange={onChange}
-              />
-            </div>
-            <div className="col-md-6">
-              <label htmlFor="country2" className="form-label">
-                Country
-              </label>
-              <input
-                type="text"
-                className="form-control my-2"
-                name="country2"
-                value={country2}
-                id="country2"
-                placeholder="e.g."
-                onChange={onChange}
-              />
-            </div>
+            {params.id[0] === "S" ? (
+              ""
+            ) : (
+              <div className="col-md-6">
+                <label htmlFor="city2" className="form-label">
+                  City
+                </label>
+                <input
+                  type="text"
+                  className="form-control my-2"
+                  name="city2"
+                  value={city2}
+                  id="city2"
+                  placeholder="e.g."
+                  onChange={onChange}
+                />
+              </div>
+            )}
+            {params.id[0] === "S" ? (
+              ""
+            ) : (
+              <div className="col-md-6">
+                <label htmlFor="country2" className="form-label">
+                  Country
+                </label>
+                <input
+                  type="text"
+                  className="form-control my-2"
+                  name="country2"
+                  value={country2}
+                  id="country2"
+                  placeholder="e.g."
+                  onChange={onChange}
+                />
+              </div>
+            )}
             <div className="col-md-12">Description</div>
             <div className="col-md-12">
               <textarea

@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
-
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #6d4fc4;
+  border-radius: 50px;
+}
 .font {
   font-family: "Poppins", sans-serif;
 }
@@ -12,6 +21,9 @@
 .start-now:hover {
   background-color: #4842b0;
 }
-.rect1 {
-  background: url("./assets/rectangle.svg");
+.zoom {
+  transition: transform 0.2s;
+}
+.zoom:hover {
+  transform: scale(1.1);
 }

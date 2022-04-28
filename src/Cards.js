@@ -1,39 +1,21 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Cards() {
   const data = [
     {
       title: "Student Section",
       Description: "No experience? No problem!",
-      link: ["1", "2", "3", "4"],
+      link1: ["S1", "S2", "S3", "S4"],
+      link2: ["S5", "S6", "S7", "S8"],
     },
     {
-      title: "Experince Section",
-      Description: "No experience? No problem!",
-      link: ["5", "6", "7", "8"],
+      title: "Experience Section",
+      Description: "Experienced one!",
+      link1: ["E1", "E2", "E3", "E4"],
+      link2: ["E5", "E6", "E7", "E8"],
     },
   ];
-  let history = useHistory();
-
-  const alertData = (i) => {
-    let target = JSON.parse(localStorage.getItem("template"));
-    if (target.npcounts !== 0 || target.wcounts !== 0) {
-      if (target.fname === "") {
-        localStorage.removeItem("template");
-      }
-    }
-    if (target.fname !== "") {
-      if (
-        window.confirm(
-          "You want to continue with the Previous Resume.\nIf yes, Please Click Ok"
-        ) !== true
-      ) {
-        localStorage.removeItem("template");
-      }
-    }
-    history.push(`/template/${i}`);
-  };
   return (
     <div className="rect1">
       {data.map((e) => {
@@ -44,15 +26,13 @@ function Cards() {
               <p>{e.Description}</p>
             </div>
             <div className="pb-3 d-flex container justify-content-around align-items-start">
-              {e.link.map((i) => {
+              {e.link1.map((i) => {
                 return (
-                  <button
+                  <Link
+                    to={`/template/${i}`}
                     type="button"
-                    className="btn shadow mx-2 p-0 rounded"
-                    style={{ width: "20vw" }}
-                    onClick={() => {
-                      alertData(i);
-                    }}
+                    className="btn shadow mx-2 p-0 rounded zoom"
+                    style={{ width: "15vw" }}
                     key={i}
                   >
                     <img
@@ -60,7 +40,26 @@ function Cards() {
                       className="card-img rounded"
                       alt="..."
                     />
-                  </button>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="pb-3 d-flex container justify-content-around align-items-start">
+              {e.link2.map((i) => {
+                return (
+                  <Link
+                    to={`/template/${i}`}
+                    type="button"
+                    className="btn shadow mx-2 p-0 rounded zoom"
+                    style={{ width: "15vw" }}
+                    key={i}
+                  >
+                    <img
+                      src={`${i}.jpg`}
+                      className="card-img rounded"
+                      alt="..."
+                    />
+                  </Link>
                 );
               })}
             </div>
