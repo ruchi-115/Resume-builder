@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./Components/logo.jpeg";
 
 function Navbar() {
   return (
@@ -8,7 +9,7 @@ function Navbar() {
       style={{ height: "10vh", background: "#6D4Fc4" }}
     >
       <div className="d-flex ">
-        <img src="logo.jpeg" alt="" width="60px" />
+        <img src={logo} alt="" width="60px" />
         <div className="fs-1 text-white fw-bold">ResumeB</div>
       </div>
       <Link

@@ -3,17 +3,9 @@ import Context from "../../Context";
 
 function Skills() {
   const context = useContext(Context);
-  const {
-    skill1,
-    skill2,
-    skill3,
-    skill4,
-    skill5,
-    skill6,
-    skill7,
-    skill8
-  } = context[0];
-const onChange = context[1];
+  const { skill1, skill2, skill3, skill4, skill5, skill6, skill7, skill8 } =
+    context[0];
+  const onChange = context[1];
   return (
     <section className="flex-column">
       <h1 className="text-center pb-5">Skills</h1>
@@ -28,7 +20,7 @@ const onChange = context[1];
             name="skill1"
             value={skill1}
             id="1"
-            placeholder="e.g."
+            placeholder="e.g. SEO"
             onChange={onChange}
           />
         </div>
@@ -42,7 +34,7 @@ const onChange = context[1];
             name="skill2"
             value={skill2}
             id="2"
-            placeholder="e.g."
+            placeholder="e.g.Public Speaking"
             onChange={onChange}
           />
         </div>
@@ -56,7 +48,7 @@ const onChange = context[1];
             name="skill3"
             value={skill3}
             id="3"
-            placeholder="e.g."
+            placeholder="e.g. Negotiation"
             onChange={onChange}
           />
         </div>
@@ -70,7 +62,7 @@ const onChange = context[1];
             name="skill4"
             value={skill4}
             id="4"
-            placeholder="e.g."
+            placeholder="e.g. Decision Making"
             onChange={onChange}
           />
         </div>
@@ -84,7 +76,7 @@ const onChange = context[1];
             name="skill5"
             value={skill5}
             id="5"
-            placeholder="e.g."
+            placeholder="e.g. Research & Stategy"
             onChange={onChange}
           />
         </div>
@@ -98,7 +90,7 @@ const onChange = context[1];
             name="skill6"
             value={skill6}
             id="6"
-            placeholder="e.g."
+            placeholder="e.g. Emotional Intelligence"
             onChange={onChange}
           />
         </div>
@@ -112,7 +104,7 @@ const onChange = context[1];
             name="skill7"
             value={skill7}
             id="7"
-            placeholder="e.g."
+            placeholder="e.g. Outbound Marketing"
             onChange={onChange}
           />
         </div>
@@ -126,7 +118,7 @@ const onChange = context[1];
             name="skill8"
             value={skill8}
             id="8"
-            placeholder="e.g."
+            placeholder="e.g. Email Marketing"
             onChange={onChange}
           />
         </div>

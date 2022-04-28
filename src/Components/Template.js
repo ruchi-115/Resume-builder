@@ -8,10 +8,9 @@ import Style from "./Left/Style";
 import { useParams } from "react-router-dom";
 import * as Right from "./Right/Right";
 import Context from "../Context";
-import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
 
 function Template() {
+  const params = useParams();
   const [target, setTarget] = useState(() => {
     let savedTemplate = localStorage.getItem("template");
     if (savedTemplate) {
@@ -79,19 +78,18 @@ function Template() {
       };
     });
   };
+  if (target.npcounts !== 0 || target.wcounts !== 0) {
+    if (target.fname === "") {
+      localStorage.removeItem("template");
+    }
+  }
   useEffect(() => {
     localStorage.setItem("template", JSON.stringify(target));
   }, [target]);
-  const params = useParams();
   const buttonColor = (e) => {
     setTarget(() => {
       return { ...target, color: e };
     });
-  };
-
-  const template = (e) => {
-    const Card = Right[`Right${e}`];
-    return <Card />;
   };
   const Next = () => {
     setTarget(() => {
@@ -113,28 +111,17 @@ function Template() {
       return { ...target, wcounts: 0 };
     });
   };
+  const template = (e) => {
+    const Card = Right[`Right${e}`];
+    return <Card />;
+  };
   const Print = () => {
     var printContents = document.getElementById("template").innerHTML;
     var originalContents = document.body.innerHTML;
     document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
-  };
-
-  const downloadPdfDocument = () => {
-    const template = document.getElementById("template");
-    html2canvas(template).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "p",
-        unit: "px",
-        format: [700, 562],
-        // format: [265, 300],
-        // 233 350
-      });
-      pdf.addImage(imgData, "JPEG", 0, 0);
-      pdf.save(`save.pdf`);
-    });
+    window.location.reload();
   };
   return (
     <Context.Provider
@@ -142,9 +129,28 @@ function Template() {
     >
       <div className="d-flex text-dark justify-content-around align-items-start">
         <div
-          className="d-flex flex-column justify-content-center py-5 m-0"
-          style={{ maxWidth: "550px", height: "100%" }}
+          className="d-flex flex-column justify-content-center p-5 m-0 position-relative"
+          style={{ width: "600px", height: "100%" }}
         >
+          <button
+            className="btn position-absolute border shadow rounded p-2 py-1 zoom"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Delete the Data"
+            style={{ left: "-50px", top: "20px" }}
+            onClick={() => {
+              if (
+                window.confirm(
+                  "Do want to Delete Data.\nIf yes, Please Click Ok"
+                ) === true
+              ) {
+                localStorage.removeItem("template");
+                window.location.reload();
+              }
+            }}
+          >
+            <i className="bi bi-trash fs-3"></i>
+          </button>
           {target.npcounts === 0 && <Header />}
           {target.npcounts === 1 && <Skills />}
           {target.npcounts === 2 && <WorkExperience />}
@@ -177,7 +183,7 @@ function Template() {
             )}
           </div>
         </div>
-        {template(params.id)}
+        {template(params.id[1])}
       </div>
     </Context.Provider>
   );

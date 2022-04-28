@@ -3,12 +3,7 @@ import Context from "../../Context";
 
 function Education() {
   const context = useContext(Context);
-  const {
-    datefrom3,
-    dateto3,
-    degree,
-    university
-  } = context[0];
+  const { datefrom3, dateto3, degree, university } = context[0];
   const onChange = context[1];
   return (
     <section className="flex-column">
@@ -24,7 +19,7 @@ function Education() {
             name="degree"
             value={degree}
             id="degree"
-            placeholder="e.g."
+            placeholder="e.g. MSc in Economics and Business Administration"
             onChange={onChange}
           />
         </div>
@@ -38,7 +33,7 @@ function Education() {
             name="university"
             value={university}
             id="university"
-            placeholder="e.g."
+            placeholder="e.g. The University of Chicago"
             onChange={onChange}
           />
         </div>
