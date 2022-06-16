@@ -137,7 +137,7 @@ function Template() {
             data-bs-toggle="tooltip"
             data-bs-placement="right"
             title="Delete the Data"
-            style={{ left: "-50px", top: "20px" }}
+            style={{ left: "0px", top: "20px" }}
             onClick={() => {
               if (
                 window.confirm(

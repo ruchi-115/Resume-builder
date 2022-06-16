@@ -20,7 +20,34 @@ function Cards() {
     <div className="rect1">
       {data.map((e) => {
         return (
-          <div className="pt-5" key={e.title}>
+          <div className="pt-5" key={e.title
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          }>
             <div className="container font">
               <h2>{e.title}</h2>
               <p>{e.Description}</p>

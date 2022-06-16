@@ -245,6 +245,35 @@ function Right1() {
                         ? "Successfully Managed."
                         : description21}
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   </div>
                   <div className="m-0 p-0 d-flex">
                     <code className="fs-5 m-0 p-0">&#x2015;</code>
